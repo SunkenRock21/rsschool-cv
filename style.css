@@ -1,8 +1,71 @@
-* {
-    background-color: black;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+
 }
-h1 {
-    color: bisque;
-    font-size: 40px;
-    margin: auto;
+
+a, 
+a:link, 
+a:visited, 
+a:focus, 
+a:active, 
+a:hover {  
+    text-decoration: none;}
+
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html {
+    height: 100%;
+   
+}
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100%;
+    background-color: var(--body-background);
+}
+header {
+    height: 80px;
+    background-color: yellow;
+}
+
+main {
+    background-color: black;
+    padding: 0 40px 0 40px;
+    flex: 1 1 auto;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+footer {
+    background-color: yellow;
+    margin-top: 60px;
+    height: 530px;
+
 }

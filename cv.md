@@ -7,6 +7,7 @@
 * GitHub: SunkenRock21
 * Email: kakoykakoy777@gmail.com
 * Telegram: @SunkenRock21
+* Vk.com: https://vk.com/sunken_rock
 
 ### About me:
 Junior frontend developer (in progress), student at Rolling Scopes. I want to improve my programming skills and work in a team.
@@ -32,9 +33,7 @@ function render() {
     } else if (taskArray[i].completed == false) {
         task.classList.remove("task__completed");
     }
-
     }
-
 }
 tasksContainer.onclick =  function(event) {
     let target = event.target;

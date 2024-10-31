@@ -6,9 +6,22 @@
     border: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
+    font-weight: 400;
     font-style: normal;
+
+
+      
+    --color-accent: #023618;
+
+    --text-light: #F3F1C0;
+    --color-dark: #141414;
+    --body-background: #141414;
+    --background-light: #f5f5f5;
+
+
 }
 
 
@@ -18,7 +31,10 @@ a:visited,
 a:focus, 
 a:active, 
 a:hover {  
-    text-decoration: none;}
+    text-decoration: none;
+    color: var(--text-light);
+
+}
 
 
 ul,
@@ -35,9 +51,57 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: "Bacasime Antique", serif;
     font-weight: inherit;
     font-size: inherit;
+    user-select: none;
 }
+.text-light {
+    color: var(--text-light);
+}
+.text-accent {
+    color: var(--color-accent);
+    filter: brightness(150%);
+    font-weight: 800;
+}
+.noselect {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none;
+}
+.heading-accent {
+    position: relative;
+    padding-left: 35px;
+    height: 35px;
+    font-size: 24px;
+    background-color: var(--color-accent);
+}
+.heading-accent::after { 
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    height: 100%;
+    width: 20px;
+    background-color: var(--color-accent);
+}
+.heading-accent::before { 
+    content: "";
+    position: absolute;
+    top: 35px;
+    right: 0;
+    transform: translateX(100%);
+    background-color: var(--color-accent);
+    filter: brightness(70%);
+    height: 100%;
+    width: 20px;
+    clip-path: polygon(0 0, 0% 50%, 100% 0);
+}
+
 
 html {
     height: 100%;
@@ -52,11 +116,10 @@ body {
 }
 header {
     height: 80px;
-    background-color: yellow;
+    background-color: var(--color-dark)
 }
 
 main {
-    background-color: #3d8f1d;
     flex: 1 1 auto;
     min-height: 100%;
     display: flex;
@@ -64,14 +127,180 @@ main {
     justify-content: center;
     align-items: stretch;
 }
-
-.aside {
-    background-color: red;
-    flex: 1 0 25%;
+aside {
+    position: relative;
+    background-color: var(--color-dark);
+    flex: 1 0 35%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: stretch;
 }
+/* aside::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 100%;
+    width: 100%;
+    border: 3px solid var(--color-accent);
+} */
+aside img {
+    width: 100%;
+    object-fit: contain;
+    pointer-events: none;
+
+}
+aside ul {
+    margin: 5px 10px 5px 0;
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.section-contacts {
+    height: 240px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.section-contacts  ul li {
+    padding-left: 60px;
+    height: 40px;
+    font-size: 14px;
+    display: flex;
+}
+li a {
+    position: relative;
+    flex: 0 0 100%;
+}
+.li__first-word {
+    font-weight: 800;
+}
+.section-contacts  a::before {
+    transition-duration: 0.3s;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+
+    transform: translateX(-125%);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.telegram-link::before {
+    background-image: url(/src/svg/telegram-svg.svg);
+}
+.telegram-link:hover::before {
+    background-image: url(/src/svg/telegram-svg-hover.svg);
+}
+.gmail-link::before {
+    background-image: url(/src/svg/gmail-svg.svg);
+}
+.gmail-link:hover::before {
+    background-image: url(/src/svg/gmail-svg-hover.svg);
+}
+.gh-link::before {
+    background-image: url(/src/svg/github-svg.svg);
+}
+.gh-link:hover::before {
+    background-image: url(/src/svg/github-svg-hover.svg);
+}
+.section-education {
+    height: 200px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.section-education  ul li {
+
+    position: relative;
+    margin-left: 60px;
+    height: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    content: "";
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.section-education span {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.li_synergy {
+    background-image: url(/src/svg/synergy.svg);
+}
+.li_rsschool {
+    background-image: url(/src/svg/rsschool-logo-light.svg);
+}
+
+
+.section-skills {
+    height: 360px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.section-skills  ul li {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 60px;
+    height: 40px;
+    font-size: 14px;
+}
+.section-skills li::before {
+    content: "";
+    transition-duration: 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(25%);
+    width: 40px;
+    height: 40px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.skills__li_html::before {
+    background-image: url(/src/svg/html-svg.svg);
+}
+.skills__li_css::before {
+    background-image: url(/src/svg/css-svg.svg);
+}
+.skills__li_js::before {
+    background-image: url(/src/svg/js-svg.svg);
+}
+.skills__li_git::before {
+    background-image: url(/src/svg/git-svg.svg);
+}
+.skills__li_ts::before {
+    background-image: url(/src/svg/ts-svg.svg);
+}
+.skills__li_react::before {
+    background-image: url(/src/svg/react-svg.svg);
+}
+
+
 .main-content {
-        background-color: rgba(2, 18, 245, 0.534);
-        flex: 1 0 75%;
+        background-color: var(--background-light);
+        flex: 1 0 65%;
 }
 
 footer {

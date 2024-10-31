@@ -47,6 +47,7 @@ body {
     display: flex;
     flex-flow: column nowrap;
     min-height: 100%;
+    padding: 100px 200px 100px 200px;
     background-color: var(--body-background);
 }
 header {
@@ -55,19 +56,29 @@ header {
 }
 
 main {
-    background-color: black;
-    padding: 0 40px 0 40px;
+    background-color: #3d8f1d;
     flex: 1 1 auto;
     min-height: 100%;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: stretch;
 }
 
-footer {
-    background-color: yellow;
-    margin-top: 60px;
-    height: 530px;
+.aside {
+    background-color: red;
+    flex: 1 0 25%;
+}
+.main-content {
+        background-color: rgba(2, 18, 245, 0.534);
+        flex: 1 0 75%;
+}
 
+footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    height: 150px;
 }
